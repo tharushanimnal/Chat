@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/messages/poll/{user}', [MessageController::class, 'poll'])->name('messages.poll');
     Route::post('/notifications/read/{id}', [MessageController::class, 'markAsRead'])->name('notifications.read');
     Route::get('/notifications/poll', [MessageController::class, 'pollNotifications']);
+    Route::get('/monitoring', [MessageController::class, 'monitoring']);
 });
 
 require __DIR__.'/auth.php';
